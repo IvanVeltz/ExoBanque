@@ -21,6 +21,7 @@ Ce projet implémente une gestion simple de comptes bancaires en PHP en utilisan
   
 - **Méthode** :
   - `calculerAge()` : Calcule l'âge du titulaire à partir de sa date de naissance.
+  - `ajouterCompte(CompteBancaire $compte)` : Ajoute un compte dans le tableau des comptes du titulaire, méthode utilisant la fonction array_push.
 
 ### CompteBancaire
 
@@ -52,8 +53,8 @@ $titulaire = new Titulaire("Veltz", "Ivan", "1991-07-26", "Mulhouse");
 $compte1 = new CompteBancaire('Compte courant', 100, 'EUR', $titulaire);
 $compte2 = new CompteBancaire('Livret A', 400, 'EUR', $titulaire);
 
-// Méthode qui ajoute un compte dans le tableau des comptes d'un titulaire
-array_push($titulaire->comptes, $compte);
+// Appele la fonction ajouterCompte de la class Titulaire dans le constructeur d'un compte
+$titulaire->ajouterCompte($this);
 
 // Calcul de l'âge et virement
 echo $titulaire->calculerAge() . ' ans<br>';
