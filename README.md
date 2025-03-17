@@ -58,3 +58,14 @@ array_push($titulaire->comptes, $compte1, $compte2);
 // Calcul de l'âge et virement
 echo $titulaire->calculerAge() . ' ans<br>';
 $compte1->virement(200, $compte2);
+```
+
+## Installation
+
+**Clonez ou téléchargez ce repository** sur votre machine :
+   
+   - git clone https://github.com/IvanVeltz/ExoBanque.git
+
+## Auteur
+
+- **Nom** : VELTZ Ivan
