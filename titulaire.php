@@ -3,18 +3,13 @@
 class Titulaire{
     
     // Attributs
-    private int $_id;
     private string $_nom;
     private string $_prenom;
     private string $_dateDeNaissance;
     private string $_ville;
     private $_comptes = [];
-    private static $_compteur = 0;
 
     //Assesseurs
-    public function getId(){
-        return $this->_id;
-    }
     public function getNom(){
         return $this->_nom;
     }
@@ -32,9 +27,6 @@ class Titulaire{
     }
 
     // Mutateur
-    public function setId($id){
-        $this->_id = $id;
-    }
     public function setNom($nom){
         $this->_nom = $nom;
     }
@@ -57,8 +49,6 @@ class Titulaire{
         $this->_prenom = $prenom;
         $this->_dateDeNaissance = $dateDeNaissance;
         $this->_ville = $ville;
-        self::$_compteur++;
-        $this->_id = self::$_compteur;
     }
 
     // Methodes
@@ -66,7 +56,7 @@ class Titulaire{
         array_push($this->_comptes, $compte);
     }
 
-    public function age(){
+    public function calculerAge(){
         $dateDeNaissance = new DateTime($this->_dateDeNaissance);
         $aujourdhui = new DateTime(date("Y-m-d"));
         $age = $dateDeNaissance->diff($aujourdhui);
@@ -79,7 +69,7 @@ class Titulaire{
 
     public function infosTitulaire(){
         echo "********************<br>";
-        echo "Comptes bancaire de $this->_prenom $this->_nom, ".$this->age()." ans, de $this->_ville<br>";
+        echo "Comptes bancaire de $this->_prenom $this->_nom, ".$this->calculerAge()." ans, de $this->_ville<br>";
         foreach($this->_comptes as $compte){
             echo $compte;
         }

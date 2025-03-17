@@ -70,5 +70,3 @@ class CompteBancaire{
             Solde disponible = $this->_soldeInitial $this->_devise<br>";
     }
 }
-
-// to do, gestion de la devise
