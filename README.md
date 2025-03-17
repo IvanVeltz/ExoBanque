@@ -52,8 +52,8 @@ $titulaire = new Titulaire("Veltz", "Ivan", "1991-07-26", "Mulhouse");
 $compte1 = new CompteBancaire('Compte courant', 100, 'EUR', $titulaire);
 $compte2 = new CompteBancaire('Livret A', 400, 'EUR', $titulaire);
 
-// Ajout des comptes au titulaire
-array_push($titulaire->comptes, $compte1, $compte2);
+// Méthode qui ajoute un compte dans le tableau des comptes d'un titulaire
+array_push($titulaire->comptes, $compte);
 
 // Calcul de l'âge et virement
 echo $titulaire->calculerAge() . ' ans<br>';
